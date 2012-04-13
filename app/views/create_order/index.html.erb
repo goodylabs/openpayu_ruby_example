@@ -1,0 +1,21 @@
+<h1>OrderCreateRequest</h1>
+
+<span>OpenPayU endpoint for OrderCreateRequest message:<span><br/>
+<b>https://<%= OpenPayU::Configuration.env %>.payu.pl/pl/standard/co/openpayu/OrderCreateRequest</b>
+
+<h2>-&gt PayU : OrderCreateRequest</h2>
+<%= @ocrq %>
+
+<h2>&lt- PayU : OrderCreateResponse</h2>
+<%= @ocrs  %>
+
+<p>request made from ip: <%= @ipaddr %></p>
+
+<h2>Next step (authorization in PayU)</h2>
+
+<form action=<%="#{OpenPayU::Configuration.authUrl}"%> method="get">
+	<input type="hidden" name="redirect_uri" value=<%="#{OpenPayU::Configuration.myUrl}/BeforeSummaryPage"%> >
+	<input type="hidden" name="response_type" value="code">
+	<input type="hidden" name="client_id" value=<%="#{OpenPayU::Configuration.clientId}"%> >		
+	<input type="submit" value="next" >			
+</form>

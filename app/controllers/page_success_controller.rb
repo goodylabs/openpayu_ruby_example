@@ -1,0 +1,2 @@
+class PageSuccessController < ApplicationController
+end

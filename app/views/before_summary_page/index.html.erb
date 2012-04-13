@@ -1,0 +1,21 @@
+<h1>BEFORE SUMMARY PAGE</h1>
+
+SessionID: <%= SpecialSession.id %>	<br />
+
+<h2>PayU Response </h2>
+Code:              <%= @code %> <br>
+
+Token:             <%= @accessToken.accessToken %> <br>
+User e-mail:       <%= @accessToken.payuUserEmail %> <br>
+User ID:           <%= @accessToken.payuUserId %> <br>
+Token expiration:  <%= @accessToken.expiresIn %> <br>
+Refresh Token:     <%= @accessToken.refreshToken %> <br>
+Success:           <%= @accessToken.success %> <br>
+Error description: <%= @accessToken.error %> <br>
+<br>
+
+<h2>Next step</h2>
+<a href = <%="#{OpenPayU::Configuration.summaryUrl}?sessionId=#{SpecialSession.id}&oauth_token=#{@accessToken.accessToken}"%> >NEXT </a>
+
+
+<br />

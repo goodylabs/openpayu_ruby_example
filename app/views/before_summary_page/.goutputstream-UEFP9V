@@ -1,0 +1,10 @@
+<h1>Before Summary Page</h1>
+<%= @ocReq %>
+
+
+<h2>PayU Response </h2>
+<%= CreateOrdersController.docresp  %>
+<p>docresp.class = <%= @docresp.class %> </p>
+<h2>Link dalej</h2>
+<a href=<%= @redirect %> >DALEJ</a>
+<br />

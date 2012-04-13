@@ -1,0 +1,2 @@
+class PageCancelController < ApplicationController
+end
